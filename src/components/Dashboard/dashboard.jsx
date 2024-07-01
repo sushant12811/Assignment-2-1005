@@ -18,11 +18,13 @@ const Dashboard = ({sidebarToggle, setSidebarToggle}) => {
       sidebarToggle={sidebarToggle} 
       setSidebarToggle={setSidebarToggle} />
 
-     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+     <div className="grid grid-cols-1 bg-gray-100 md:grid-cols-3 gap-4 p-4">
         <div className="bg-white shadow rounded-lg p-4 h-auto">
           <DashNewsFeed />
         </div>       
+        <div className="bg-white shadow rounded-lg p-4 h-auto">
           <DashWeather />
+        </div> 
         <div className="bg-white shadow rounded-lg p-4 h-auto">
           <StockData />
         </div>

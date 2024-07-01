@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Card } from "@tremor/react";
 
 
-//stock data API fetching
+/**
+ * Fetching Stock data and displaying in the card componenets
+ * @returns 
+ */
 const StockData = () => {
   const [stock, setStock] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -24,7 +27,7 @@ const StockData = () => {
         if (data.status !== 'OK') {
           throw new Error('Failed to fetch stock data for symbol: ' + symbol);
         }
-        setStock(data.results[0]); 
+        setStock({ ...data.results[0], symbol });
       } catch (error) {
         setError(error.message);
         console.error("Failed to fetch stock data", error);
@@ -45,7 +48,7 @@ const StockData = () => {
   }
 
 
-  //Structured data of stock
+  //Returnig the structured data of stocks
   return (
     <Card className="max-w-3xl" decoration="top" decorationColor="blue">
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
@@ -53,12 +56,11 @@ const StockData = () => {
           <h2 className="text-xl font-bold text-white">Stock API</h2>
         </div>
         <div className="p-4">
-          <p>Symbol: {stock.symbol}</p>
+          <p className="text-xl font-bold mb-2">Symbol: {stock.symbol}</p>
           <p>Open: {stock.o}</p>
           <p>High: {stock.h}</p>
           <p>Low: {stock.l}</p>
           <p>Close: {stock.c}</p>
-          
         </div>
       </div>
     </Card>
