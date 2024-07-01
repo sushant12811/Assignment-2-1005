@@ -9,7 +9,7 @@ import Dashboard from './dashboard'
  */
 
 const Showcase = () => {
-    const [sidebarToggle, setSidebarToggle] = useState(false)
+    const [sidebarToggle, setSidebarToggle] = useState(true)
   return (
     <div className='flex'>
         <Sidebar sidebarToggle={sidebarToggle} />

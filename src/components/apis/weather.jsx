@@ -45,10 +45,10 @@ function DashWeather() {
 
   //returnig the structure of weather data
   return (
-    <Card className="max-w-3xl" decoration="top" decorationColor="blue">
+    <Card className="max-w-3xl" decoration="top">
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="px-4 py-5 bg-red-500">
-          <h2 className="text-xl font-bold text-white">Weather API</h2>
+          <h2 className="flex justify-center items-center text-2xl font-bold  font-bold text-white">Weather API</h2>
         </div>
       <div className="p-6 bg-white">
         <div className="uppercase tracking-wide text-xl text-indigo-500 font-bold">Weather in {weather.name}</div>

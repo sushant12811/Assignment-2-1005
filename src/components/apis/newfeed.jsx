@@ -35,10 +35,10 @@ function DashNewsFeed() {
 
 //returnig the structured data of newsfeed
     return (
-        <Card className="max-w-3xl" decoration="top" decorationColor="blue">
+        <Card className="max-w-3xl" decoration="top" >
             <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
     <div className="px-4 py-5 bg-blue-500">
-        <h2 className="text-xl font-bold text-white">News Feed API</h2>
+        <h2 className="flex justify-center items-center text-2xl font-bold text-white" decoration="end">News Feed API</h2>
     </div>
     <div className="p-4">
   {articles.slice(0, 2).map((item) => (
