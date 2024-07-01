@@ -43,10 +43,15 @@ function DashWeather() {
                 <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Weather in {weather.name}</div>
                 <div className="block mt-1 text-lg leading-tight font-medium text-black">Temperature: {Math.round(weather.main.temp - 273.15)}°C</div>
                 <p className="mt-2 text-gray-500">{weather.weather[0].main} ({weather.weather[0].description})</p>
+                <p className="mt-3 text-gray-500">Visibility: {weather.visibility}</p>
+
+
               </div>
+              
             ) : (
                 <div className='p-8'>Loading weather...</div>
             )}
+            
     </div>        
         </Card>
     );

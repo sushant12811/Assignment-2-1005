@@ -16,7 +16,7 @@ function DashNewsFeed() {
     useEffect(() => {
         const fetchNews = async () => {
             const apiKey = "2309499006b1495c9e68562c5992ba1b";
-            const url = `https://newsapi.org/v2/top-headlines?country=ca&apiKey=${apiKey}`;
+            const url = `https://newsapi.org/v2/top-headlines?country=ca&apiKey=2309499006b1495c9e68562c5992ba1b`;
 
             try {
                 const response = await fetch(url);
@@ -39,23 +39,23 @@ function DashNewsFeed() {
         <h2 className="text-xl font-bold text-white">News Feed API</h2>
     </div>
     <div className="p-4">
-        {articles.slice(0, 2).map((item) => (
-            <div key={item.url} className="mb-4">
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <p className="text-gray-700">{item.author}</p>
-                <ul className="mt-4">
-                    <li className="flex items-center space-x-4">
-                        <svg className="h-5 w-5 text-sky-400" fill="currentColor" viewBox="0 0 20 20">mae
-                        </svg>
-                        <div>
-                            <p className="font-bold truncate">{item.source.id}</p>
-                            <p className="truncate">{item.source.name}</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        ))}
+  {articles.slice(0, 2).map((item) => (
+    <div key={item.url} className="bg-white shadow-lg rounded-lg overflow-hidden mb-4">
+      <div className="p-4">
+        <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+        <p className="text-gray-700 mb-2">{item.author}</p>
+        <div className="flex items-center space-x-3 mb-2">
+          <div>
+            <p className="font-bold">{item.source.id}</p>
+            <p>{item.source.name}</p>
+          </div>
+        </div>
+      </div>
     </div>
+  ))}
+</div>
+
+
 </div>
         </Card>
     );
