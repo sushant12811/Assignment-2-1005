@@ -15,7 +15,6 @@ const Showcase = () => {
     <div className='flex'>
         <Sidebar sidebarToggle={sidebarToggle} />
         <Dashboard sidebarToggle={sidebarToggle} setSidebarToggle={setSidebarToggle}/>
-        <DashNewsFeed sidebarToggle={sidebarToggle} setSidebarToggle={setSidebarToggle} />
 
     </div>
   )

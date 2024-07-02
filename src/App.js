@@ -20,11 +20,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
+          
 
           
-          <Route element={<PrivateRoute />}>
+            <Route element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
-            <Route path="/home" element={<Home />} />
             <Route path="/newfeed" element={<DashNewsFeed />} />
             <Route path="/weather" element={<Weather />} />
             <Route path="/stocks" element={<Stocks />} />

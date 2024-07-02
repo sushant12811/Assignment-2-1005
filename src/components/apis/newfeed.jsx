@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Card } from "@tremor/react";
-import Sidebar from "../Dashboard/Sidebar";
 
 
 
