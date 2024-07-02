@@ -38,9 +38,9 @@ function Profile() {
 
   return (
     <div className="flex justify-center items-center">
-      <Card className="max-w-lg" decoration="center" decorationColor="blue">
+      <Card className="max-w-lg" decoration="center">
         <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-          <h1 className="text-3xl font-bold mb-4">Profile Page</h1>
+          <h1 className="flex justify-center items-center text-3xl font-bold mb-4">Profile Page</h1>
           <div className="profile profile-info text-center">
             <img src={avatarUrl} alt="Avatar" />
             <h2 className="text-xl font-semibold mt-3">{userData.firstName} {userData.lastName}</h2>
