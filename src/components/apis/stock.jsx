@@ -50,20 +50,23 @@ const StockData = () => {
 
   //Returnig the structured data of stocks
   return (
-    <Card className="max-w-3xl" decoration="top">
-      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="px-4 py-5 bg-green-500">
-          <h2 className="flex justify-center items-center text-2xl font-bold text-white">Stock API</h2>
+    <div className="flex justify-center items-center">
+
+      <Card className="max-w-3xl" decoration="top">
+        <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="px-4 py-5 bg-green-500">
+            <h2 className="flex justify-center items-center text-2xl font-bold text-white">Stock API</h2>
+          </div>
+          <div className="p-4">
+            <p className="text-xl font-bold mb-2">Symbol: {stock.symbol}</p>
+            <p>Open:&emsp;{stock.o}</p>
+            <p>High:&ensp;&ensp;&ensp;{stock.h}</p>
+            <p>Low:&ensp;&nbsp;&emsp;{stock.l}</p>
+            <p>Close:&emsp;{stock.c}</p>
+          </div>
         </div>
-        <div className="p-4">
-          <p className="text-xl font-bold mb-2">Symbol: {stock.symbol}</p>
-          <p>Open:&emsp;{stock.o}</p>
-          <p>High:&ensp;&ensp;&ensp;{stock.h}</p>
-          <p>Low:&ensp;&nbsp;&emsp;{stock.l}</p>
-          <p>Close:&emsp;{stock.c}</p>
-        </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 };
 

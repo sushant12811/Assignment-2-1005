@@ -45,19 +45,22 @@ function DashWeather() {
 
   //returnig the structure of weather data
   return (
-    <Card className="max-w-3xl" decoration="top">
-      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="px-4 py-5 bg-red-500">
-          <h2 className="flex justify-center items-center text-2xl font-bold  font-bold text-white">Weather API</h2>
+    <div className="flex justify-center items-center">
+
+      <Card className="max-w-3xl" decoration="top">
+        <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="px-4 py-5 bg-red-500">
+            <h2 className="flex justify-center items-center text-2xl font-bold  font-bold text-white">Weather API</h2>
+          </div>
+          <div className="p-6 bg-white">
+            <div className="uppercase tracking-wide text-xl text-indigo-500 font-bold">Weather in {weather.name}</div>
+            <div className="block mt-1 text-lg leading-tight font-bold text-black">Temperature: {Math.round(weather.main.temp - 273.15)}°C</div>
+            <p className="mt-2 text-gray-500 text-lg">{weather.weather[0].main} ({weather.weather[0].description})</p>
+            <p className="mt-2 text-gray-500 text-md">Visibility: {weather.visibility} meters</p>
+          </div>
         </div>
-      <div className="p-6 bg-white">
-        <div className="uppercase tracking-wide text-xl text-indigo-500 font-bold">Weather in {weather.name}</div>
-        <div className="block mt-1 text-lg leading-tight font-bold text-black">Temperature: {Math.round(weather.main.temp - 273.15)}°C</div>
-        <p className="mt-2 text-gray-500 text-lg">{weather.weather[0].main} ({weather.weather[0].description})</p>
-        <p className="mt-2 text-gray-500 text-md">Visibility: {weather.visibility} meters</p>
-      </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 }
 

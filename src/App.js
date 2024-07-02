@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/auth/login";
 import Register from "./components/auth/register";
@@ -7,33 +8,49 @@ import Weather from "./components/apis/weather";
 import Stocks from "./components/apis/stock";
 import { AuthProvider } from "./contexts/authContext";
 import DashNewsFeed from "./components/apis/newfeed";
-
-/**
- *Routing for the web-app
- *
- * @return {*} 
- */
+import Sidebar from "./components/Dashboard/Sidebar"; 
+import Navbar from "./components/Dashboard/Navbar";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
-        {/* <Header /> */}
-        <div className="w-full h-screen flex flex-col">
-          <Routes>
-            
-            <Route path="/" element={<Login />} />
-            <Route path="/login" element={<Login />} />
-            <Route path='/profile' element={<Profile/>}/>
-            <Route path="/register" element={<Register />} />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/home" element={<Home />} />
+
+          
+          <Route element={<PrivateRoute />}>
+            <Route path="/profile" element={<Profile />} />
             <Route path="/home" element={<Home />} />
             <Route path="/newfeed" element={<DashNewsFeed />} />
             <Route path="/weather" element={<Weather />} />
             <Route path="/stocks" element={<Stocks />} />
-          </Routes>
-        </div>
+          </Route>
+        </Routes>
       </Router>
     </AuthProvider>
+  );
+}
+
+
+//render with sidebar
+function PrivateRoute() {
+  return (
+    <div className="flex-direction-row">
+      <Sidebar /> 
+      <Navbar></Navbar>
+      <div className="flex-1 overflow-y-auto">
+        <Routes>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/newfeed" element={<DashNewsFeed />} />
+          <Route path="/weather" element={<Weather />} />
+          <Route path="/stocks" element={<Stocks />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 

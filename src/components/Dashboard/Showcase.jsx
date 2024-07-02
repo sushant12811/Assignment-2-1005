@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Sidebar from './Sidebar'
 import Dashboard from './dashboard'
+import DashNewsFeed from '../apis/newfeed'
 
 /**
  * Showcase for the dashboard
@@ -13,10 +14,8 @@ const Showcase = () => {
   return (
     <div className='flex'>
         <Sidebar sidebarToggle={sidebarToggle} />
-        <Dashboard
-        sidebarToggle={sidebarToggle}
-        setSidebarToggle={setSidebarToggle}
-        />
+        <Dashboard sidebarToggle={sidebarToggle} setSidebarToggle={setSidebarToggle}/>
+
     </div>
   )
 }
